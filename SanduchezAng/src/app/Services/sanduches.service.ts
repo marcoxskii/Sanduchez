@@ -23,7 +23,21 @@ export class SanduchesService {
     console.log("Sándwich agregado:", sandwich);
   }
 
-  
+  deleteSandwich(sandwich: Sandwich): void {
+    const currentSandwiches = this.sandwichesSubject.value;
+    const updatedSandwiches = currentSandwiches.filter(s => s !== sandwich);
+    this.sandwichesSubject.next(updatedSandwiches);
+    console.log("Sándwich eliminado:", sandwich);
+  }
 
+  updateSandwich(updatedSandwich: Sandwich): void {
+    const currentSandwiches = this.sandwichesSubject.value;
+    const index = currentSandwiches.findIndex(s => s.name === updatedSandwich.name);
+    if (index !== -1) {
+      currentSandwiches[index] = updatedSandwich;
+      this.sandwichesSubject.next([...currentSandwiches]);
+      console.log("Sándwich modificado:", updatedSandwich);
+    }
+  }
 
 }
