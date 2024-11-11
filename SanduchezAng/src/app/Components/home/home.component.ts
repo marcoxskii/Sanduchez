@@ -10,9 +10,9 @@ import { Sandwich, SanduchesService } from '../../Services/sanduches.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  newSandwich: Sandwich = { name: '', description: '', price: 0 };
-  sandwiches: Sandwich[] = []; // Almacenará la lista de sándwiches
-  editingSandwich: Sandwich | null = null; // Almacenará el sándwich que se está editando
+  newSandwich: Sandwich = { id: 0, name: '', description: '', price: 0 };
+  sandwiches: Sandwich[] = []; 
+  editingSandwich: Sandwich | null = null; 
 
   constructor(private sanduchesService: SanduchesService) {}
 
@@ -28,9 +28,12 @@ export class HomeComponent {
         this.sanduchesService.updateSandwich(this.newSandwich);
         this.editingSandwich = null;
       } else {
+        // Generar un nuevo id
+        const newId = this.sandwiches.length > 0 ? Math.max(...this.sandwiches.map(s => s.id)) + 1 : 1;
+        this.newSandwich.id = newId;
         this.sanduchesService.addSandwich(this.newSandwich);
       }
-      this.newSandwich = { name: '', description: '', price: 0 };
+      this.newSandwich = { id: 0, name: '', description: '', price: 0 };
     }
   }
 
