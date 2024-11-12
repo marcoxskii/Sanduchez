@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="left-section">
+      <form (ngSubmit)="onSubmit()">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" [(ngModel)]="newSandwich.name" name="name" required>
+    
+        <label for="description">Descripción:</label>
+        <input type="text" id="description" [(ngModel)]="newSandwich.description" name="description" required>
+    
+        <label for="price">Precio:</label>
+        <input type="number" id="price" [(ngModel)]="newSandwich.price" name="price" required>
+    
+        <button type="submit">{{ editingSandwich ? 'Actualizar Sándwich' : 'Agregar Sándwich' }}</button>
+      </form>
+    </div>
+    
+    <div class="right-section">
+      <h2>Lista de Sándwiches</h2>
+      <ul>
+        <li *ngFor="let sandwich of sandwiches" (click)="editSandwich(sandwich)">
+          <strong>{{ sandwich.name }}</strong><br>
+          Descripción: {{ sandwich.description }}<br>
+          Precio: ${{ sandwich.price }}<br>
+          <button (click)="deleteSandwich(sandwich); $event.stopPropagation()">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+  </div>
