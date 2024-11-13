@@ -16,7 +16,7 @@ services:
       - pg_data2:/var/lib/postgresql/data
 
   srvwildfly:
-    image: test1234
+    image: sanduchez
     container_name: srvwildfly
     hostname: srvwildfly
     environment:
@@ -47,13 +47,6 @@ services:
     image: swaggerapi/swagger-ui
     ports:
       - 8888:8080
-
-  swaggereditor:
-    depends_on:
-      - srvwildfly
-    image: swaggerapi/swagger-editor
-    ports:
-      - 9999:8080
 
 volumes:
   pg_data2:

@@ -19,11 +19,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>test1234</artifactId>
+    <artifactId>sanduchez</artifactId>
     <version>1</version>
     
     <packaging>war</packaging>
-    <name>test1234</name>
+    <name>sanduchez</name>
     <description>Insert description for your project here.</description>
 
     <properties>
@@ -248,18 +248,18 @@
                 <configuration>
                     <images>
                         <image>
-                            <name>test1234</name>
-                            <alias>my-test1234</alias>
+                            <name>sanduchez</name>
+                            <alias>my-sanduchez</alias>
                             <build>
                                 <contextDir>${project.basedir}/src/main/docker</contextDir>
                                 <assembly>
                                     <mode>dir</mode>
                                     <name>maven/</name>
                                     <inline>
-                                        <id>htest1234</id>
+                                        <id>sanduchez</id>
                                         <files>
                                             <file>
-                                                <source>${project.build.directory}/test1234.war</source>
+                                                <source>${project.build.directory}/sanduchez.war</source>
                                                 <outputDirectory>.</outputDirectory>
                                             </file>
                                         </files>

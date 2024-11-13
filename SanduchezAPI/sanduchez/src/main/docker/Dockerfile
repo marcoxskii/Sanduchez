@@ -1,4 +1,4 @@
-FROM jboss/wildfly
+FROM jboss/wildfly:20.0.1.Final
 ENV WILDFLY_USER user
 ENV WILDFLY_PASS userPassword
 
