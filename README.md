@@ -59,8 +59,10 @@ Wildfly con Jakarta (Backend):
 ```sh
 http://localhost:8082
 ```
-PostgreSQL: Conexión interna entre contenedores
-
+PostgreSQL: 
+```sh
+Conexión interna entre contenedores
+```
 PgAdmin: 
 ```sh
 http://localhost:5050
