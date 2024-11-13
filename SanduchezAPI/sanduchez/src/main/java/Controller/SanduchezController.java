@@ -27,11 +27,15 @@ public class SanduchezController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response  getAll(){
+        System.out.println("Start");
         try{
             return Response.ok(dao.getAll()).build();
         }
         catch(Exception ex){
             return Response.status(Response.Status.BAD_REQUEST).entity(ex.getMessage()).type(MediaType.TEXT_PLAIN).build();
+        }
+        finally{
+            System.out.println("End");
         }
     }
 
