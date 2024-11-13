@@ -7,3 +7,4 @@ Para construir esta imagen utilizamos el dockerfile dentro del front, creamos la
 docker build -t sanduchezang-app .
 docker run -d -p 80:80 sanduchezang-app
 ```
+<p style="color:blue;">Ejecución</p>
