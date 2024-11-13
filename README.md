@@ -60,6 +60,7 @@ Wildfly con Jakarta (Backend):
 http://localhost:8082
 ```
 PostgreSQL: Conexión interna entre contenedores
+
 PgAdmin: 
 ```sh
 http://localhost:5050
