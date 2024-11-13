@@ -51,11 +51,21 @@ docker-compose up -d
 ```
 
 ## 2. Acceder a los servicios:
+Angular (Frontend):
 ```sh
-Angular (Frontend): http://localhost
-Wildfly con Jakarta (Backend): http://localhost:8082
+http://localhost
+```
+Wildfly con Jakarta (Backend): 
+```sh
+http://localhost:8082
+```
 PostgreSQL: Conexión interna entre contenedores
-PgAdmin: http://localhost:5050
-Swagger: http://localhost:8888
+PgAdmin: 
+```sh
+http://localhost:5050
+```
+Swagger: 
+```sh
+http://localhost:8888
 ```
 
