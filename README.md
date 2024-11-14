@@ -25,12 +25,21 @@ El frontend está desarrollado en Angular. Proporciona una interfaz de usuario i
 Para construir y ejecutar la imagen Docker del frontend, usa los siguientes comandos:
 
 ```sh
+npm install
+ng build
 docker build -t sanduchezang-app .
 docker run -d -p 80:80 sanduchezang-app
 ```
 
 ### 2. Wildfly con Jakarta (Backend) 💻
 El backend está implementado con Jakarta EE y se despliega en un servidor Wildfly. Este servicio expone una API RESTful para interactuar con la base de datos PostgreSQL.
+
+Para construir y ejecutar la imagen Docker del backend, usa los siguientes comandos:
+
+```sh
+mvn verify
+mvn clean package docker:build
+```
 
 ### 3. PostgreSQL (Base de Datos) 🗄️
 La base de datos está gestionada por PostgreSQL, donde se almacenan los datos de los productos.
@@ -53,7 +62,7 @@ docker-compose up -d
 ## 2. Acceder a los servicios:
 Angular (Frontend):
 ```sh
-http://localhost
+http://localhost:80
 ```
 Wildfly con Jakarta (Backend): 
 ```sh
