@@ -1,18 +1,19 @@
-package sanduchez;
+package com.sanduchez;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import Controller.SanduchezController;
+import Util.CORSFilter;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
-import util.CORSFilter;
 
 @ApplicationPath("/rs")
-public class sanduchezApplication extends Application{
+public class SanduchezApplication extends Application{
 
     @Override
     public Set<Class<?>> getClasses() {
+        System.out.println("Application classes started");
         Set<Class<?>> resources = new HashSet<>();
         resources.add(CORSFilter.class);
         resources.add(SanduchezController.class);

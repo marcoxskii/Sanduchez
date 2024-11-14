@@ -2,8 +2,9 @@ package DAO;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+;
 
 public abstract class GenericDAO<T, D> {
 

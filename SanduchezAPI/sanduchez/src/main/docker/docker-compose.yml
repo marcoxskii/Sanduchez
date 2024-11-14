@@ -48,6 +48,21 @@ services:
     ports:
       - 8888:8080
 
+  angular:
+    depends_on:
+      - srvwildfly  
+    image: sanduchezang-app
+    command: nginx -g 'daemon off;'
+    ports:
+      - 443:443
+      - 80:80
+    environment:
+      - NGINX_SSL_CERT=/etc/ssl/certs/certificate.crt
+      - NGINX_SSL_CERT_KEY=/etc/ssl/private/certificate.key
+    volumes:
+      - ./path/to/your/certificate.crt:/etc/ssl/certs/certificate.crt
+      - ./path/to/your/private.key:/etc/ssl/private/certificate.key
+
 volumes:
   pg_data2:
     driver: local

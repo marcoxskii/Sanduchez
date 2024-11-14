@@ -1,10 +1,8 @@
 package Controller;
 
-
-import javax.inject.Inject;
-
 import DAO.SanduchezDAO;
 import Models.Sandwich;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -16,7 +14,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-@Path("/sandwich")
+@Path("sandwich")
 public class SanduchezController {
 
     @Inject

@@ -3,10 +3,11 @@ package DAO;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
 import Models.Sandwich;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.Query;
 
+@Stateless
 public class SanduchezDAO extends GenericDAO<Sandwich, String> {
 
     @Override

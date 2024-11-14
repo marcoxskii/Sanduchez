@@ -1,4 +1,4 @@
-package com.example.test;
+package com.sanduchez.test;
 
 import java.io.File;
 
@@ -27,14 +27,14 @@ public class SampleIT {
     @Deployment
     public static Archive<?> getEarArchive() {
         // Import the web archive that was created by Maven:
-        File f = new File("./target/sanduchez.war");
+        File f = new File("./target/demo.war");
         if (f.exists() == false) {
             throw new RuntimeException("File " + f.getAbsolutePath() + " does not exist.");
         }
-        WebArchive war = ShrinkWrap.create(ZipImporter.class, "sanduchez.war").importFrom(f).as(WebArchive.class);
+        WebArchive war = ShrinkWrap.create(ZipImporter.class, "demo.war").importFrom(f).as(WebArchive.class);
         
         // Add the package containing the test classes:
-        war.addPackage("com.example.test");
+        war.addPackage("com.sanduchez.test");
 
         // Export the WAR file to examine it in case of problems:
         // war.as(ZipExporter.class).exportTo(new File("c:\\temp\\test.war"), true);
