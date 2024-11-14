@@ -25,6 +25,7 @@ El frontend está desarrollado en Angular. Proporciona una interfaz de usuario i
 Para construir y ejecutar la imagen Docker del frontend, usa los siguientes comandos:
 
 ```sh
+cd SanduchezAng
 npm install
 ng build
 docker build -t sanduchezang-app .
@@ -37,6 +38,7 @@ El backend está implementado con Jakarta EE y se despliega en un servidor Wildf
 Para construir y ejecutar la imagen Docker del backend, usa los siguientes comandos:
 
 ```sh
+cd SanduchezAPI/sanduchez/src/main/docker
 mvn verify
 mvn clean package docker:build
 ```
