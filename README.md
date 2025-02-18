@@ -83,3 +83,53 @@ Swagger:
 http://localhost:8888
 ```
 
+## 🌐 Despliegue en Kubernetes
+
+Para desplegar los servicios en un clúster de Kubernetes, sigue los siguientes pasos:
+
+### 1. Crear los archivos de configuración de Kubernetes
+
+Asegúrate de tener los archivos de configuración YAML para cada servicio en el directorio `. Estos archivos deben definir los deployments y services necesarios.
+
+### 2. Aplicar los archivos de configuración
+
+Para desplegar los servicios en el clúster de Kubernetes, usa los siguientes comandos:
+
+```sh
+kubectl apply -f angular-deployment.yaml
+kubectl apply -f wildfly-deployment.yaml
+kubectl apply -f postgresql-deployment.yaml
+kubectl apply -f pgadmin-deployment.yaml
+kubectl apply -f swagger-deployment.yaml
+```
+
+### 3. Verificar los pods y servicios
+
+Para verificar que los pods y servicios están corriendo correctamente, usa los siguientes comandos:
+
+```sh
+kubectl get pods
+kubectl get services
+minikube service sanduchez-frontend
+kubectl logs -f <pod-name>
+```
+### 4. Escalar los servicios
+
+Para escalar los servicios y manejar una mayor carga, puedes ajustar el número de réplicas de los pods. Usa el siguiente comando para escalar un servicio específico:
+
+```sh
+kubectl scale deployment <deployment-name> --replicas=<number-of-replicas>
+```
+
+Por ejemplo, para escalar el frontend de Angular a 3 réplicas, usa:
+
+```sh
+kubectl scale deployment sanduchez-frontend --replicas=3
+kubectl scale deployment sanduchez-backend --replicas=3
+```
+
+Verifica que el escalado se haya realizado correctamente:
+
+```sh
+kubectl get deployments
+```
